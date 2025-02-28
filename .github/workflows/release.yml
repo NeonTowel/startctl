@@ -30,29 +30,22 @@ jobs:
       run: |
         GOOS=windows GOARCH=amd64 go build -o startctl.exe
 
-    - name: Bump version and create tag
-      id: tag_version
-      uses: mathieudutour/github-tag-action@v6.2
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        default_bump: minor
-        create_annotated_tag: true
-
-    - name: Release Please
-      uses: google-github-actions/release-please-action@v3
-      with:
-        release-type: go
-        package-name: startctl
+    - name: Bump version and push tag
+      uses: anothrNick/github-tag-action@v1
+      id: bump_version
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        WITH_V: false
+        DEFAULT_BUMP: patch
 
-    - name: Push changes
-      run: |
-        git push --follow-tags origin main
-
-    - name: Create GitHub Release
-      uses: softprops/action-gh-release@v1
+    - name: Create Release
+      uses: softprops/action-gh-release@v2
       with:
-        files: startctl.exe
+        tag_name: ${{ steps.bump_version.outputs.new_tag }}
+        name: Release v${{ steps.bump_version.outputs.new_tag }}
+        draft: false
+        prerelease: false
+        files: |
+          release/fai-*
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
