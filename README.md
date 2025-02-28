@@ -3,7 +3,7 @@
 Welcome to **startctl**, the CLI tool that puts you in control of your Windows startup programs. Whether you're adding, removing, enabling, or disabling, startctl has got your back. It's like having a personal assistant for your startup apps, minus the coffee runs.
 
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen) ![License](https://img.shields.io/badge/license-Unlicense-blue)
-[![Go Version](https://img.shields.io/badge/Go-1.x-blue.svg)](https://golang.org/)
+[![Go Version](https://img.shields.io/badge/Go-1.23-blue.svg)](https://golang.org/)
 [![Windows Support](https://img.shields.io/badge/Windows-✔-brightgreen)](https://www.microsoft.com/)
 [![GitHub release](https://img.shields.io/github/v/release/neontowel/startctl)](https://github.com/neontowel/startctl/releases)
 [![Issues](https://img.shields.io/github/issues/neontowel/startctl)](https://github.com/neontowel/startctl/issues)
