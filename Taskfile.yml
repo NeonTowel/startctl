@@ -1,0 +1,16 @@
+version: '3'
+
+tasks:
+  build:
+    cmds:
+      - go build -o ./startctl.exe
+    desc: "Build the startctl application."
+
+  run:
+    cmds:
+      - go run main.go
+    desc: "Run the startctl application in development mode."
+    sources:
+      - "**/*.go"
+    generates:
+      - startctl 
