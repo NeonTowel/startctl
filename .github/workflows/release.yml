@@ -28,7 +28,11 @@ jobs:
 
     - name: Cross-compile for Windows
       run: |
-        GOOS=windows GOARCH=amd64 go build -o startctl.exe
+        GOOS=windows GOARCH=amd64 go build -ldflags="-s -w" -o startctl.exe
+
+    - name: Generate SHA256 checksum
+      run: |
+        sha256sum startctl.exe > startctl.exe.sha256
 
     - name: Bump version and push tag
       uses: anothrNick/github-tag-action@v1
@@ -47,5 +51,6 @@ jobs:
         prerelease: false
         files: |
           startctl.exe
+          startctl.exe.sha256
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
