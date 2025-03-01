@@ -1,6 +1,6 @@
 # 🚀 startctl: Your Startup Program Commander
 
-Welcome to **startctl**, the CLI tool that puts you in control of your Windows startup programs. Whether you're adding, removing, enabling, or disabling, startctl has got your back. It's like having a personal assistant for your startup apps, minus the coffee runs.
+Welcome to **startctl**, the CLI tool that puts you in control of your Windows startup programs. Whether you're adding, removing, enabling, or disabling, startctl has got your back. It's like having a personal assistant for your startup apps, minus the coffee runs. ☕️
 
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen) ![License](https://img.shields.io/badge/license-Unlicense-blue)
 [![Go Version](https://img.shields.io/badge/Go-1.23-blue.svg)](https://golang.org/)
@@ -8,26 +8,46 @@ Welcome to **startctl**, the CLI tool that puts you in control of your Windows s
 [![GitHub release](https://img.shields.io/github/v/release/neontowel/startctl)](https://github.com/neontowel/startctl/releases)
 [![Issues](https://img.shields.io/github/issues/neontowel/startctl)](https://github.com/neontowel/startctl/issues)
 [![Stars](https://img.shields.io/github/stars/neontowel/startctl?style=social)](https://github.com/neontowel/startctl/stargazers)
+![Scoop Support](https://img.shields.io/badge/Scoop-Supported-brightgreen)
 
+## 💻 Development
 
-## 📥 Installation
+1. **Prerequisites**: Ensure you have Go 1.23 or later installed. You can download it from [the official Go website](https://golang.org/dl/). Additionally, make sure `go-task` is installed. You can download it from [go-task's GitHub](https://github.com/go-task/task) and follow the installation instructions for your platform.
+2. **Clone the repo**: 
+   ```bash
+   git clone https://github.com/neontowel/startctl.git
+   ```
+3. **Navigate to the directory**: 
+   ```bash
+   cd startctl
+   ```
 
-1. Ensure you have `go-task` installed. You can download it from [go-task's GitHub](https://github.com/go-task/task) and follow the installation instructions for your platform.
-2. Clone the repo: `git clone https://github.com/neontowel/startctl.git`
-3. Navigate to the directory: `cd startctl`
-
-## 🛠️ Usage
+## 🛠️ Build and run
 
 Here's how you can use startctl to manage your startup programs:
 
-- **Build the application**: `task build`
-- **Run the application in development mode**: `task run`
+- **Build the application**: 
+  ```bash
+  task build
+  ```
+- **Run the application in development mode**: 
+  ```bash
+  task run
+  ```
 
-- **Add a program**: `startctl add <name> <path>`
-- **Remove a program**: `startctl remove <name>`
-- **Enable a program**: `startctl enable <name>`
-- **Disable a program**: `startctl disable <name>`
-- **List all programs**: `startctl list`
+## 📥 Installation
+
+To install startctl using Scoop, follow these steps:
+
+1. **Add the Scoop bucket**: 
+   ```bash
+   scoop bucket add neontowel https://github.com/NeonTowel/scoop-bucket
+   ```
+
+2. **Install startctl**:
+   ```bash
+   scoop install neontowel/startctl
+   ```
 
 ## 🌟 Features
 
@@ -46,4 +66,4 @@ This project is licensed under the Unlicense. Feel free to use, modify, and dist
 
 ---
 
-*In a world where startup programs run amok, one CLI tool stands to bring order...* 
+*In a world where startup programs run amok, one CLI tool stands to bring order...* 🕶️ 
