@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - '**/*.go'
+      - '.github/workflows/release.yml'
   workflow_dispatch:
 
 permissions:
@@ -52,7 +53,7 @@ jobs:
 
     - name: Cross-compile for Windows
       run: |
-        go build -ldflags="-s -w" -o startctl.exe
+        GOOS=windows GOARCH=amd64 go build -ldflags="-s -w" -o startctl.exe
 
     - name: Generate SHA256 checksum
       run: |
