@@ -9,6 +9,7 @@ Welcome to **startctl**, the CLI tool that puts you in control of your Windows s
 [![Issues](https://img.shields.io/github/issues/neontowel/startctl)](https://github.com/neontowel/startctl/issues)
 [![Stars](https://img.shields.io/github/stars/neontowel/startctl?style=social)](https://github.com/neontowel/startctl/stargazers)
 ![Scoop Support](https://img.shields.io/badge/Scoop-Supported-brightgreen)
+[![Go Report Card](https://goreportcard.com/badge/github.com/neontowel/startctl)](https://goreportcard.com/report/github.com/neontowel/startctl)
 
 ## 💻 Development
 

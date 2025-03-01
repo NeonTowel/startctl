@@ -14,3 +14,20 @@ tasks:
       - "**/*.go"
     generates:
       - startctl 
+  
+  gosec:
+    cmds:
+      - go install github.com/securego/gosec/v2/cmd/gosec@latest
+      - gosec ./...
+    desc: "Run gosec to check for security vulnerabilities."
+
+  osv-scanner:
+    cmds:
+      - go install github.com/google/osv-scanner/v2/cmd/osv-scanner@latest
+      - osv-scanner scan .
+    desc: "Run osv-scanner to check for vulnerabilities."
+
+  fmt:
+    cmds:
+      - go fmt ./...
+    desc: "Run go fmt to format the entire project."

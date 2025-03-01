@@ -29,6 +29,16 @@ jobs:
       run: |
         go mod tidy
 
+    - name: Run gosec for security vulnerabilities
+      run: |
+        go install github.com/securego/gosec/v2/cmd/gosec@latest
+        gosec ./...
+
+    - name: Run osv-scanner for vulnerabilities
+      run: |
+        go install github.com/google/osv-scanner/v2/cmd/osv-scanner@latest
+        osv-scanner scan .
+
     - name: Cross-compile for Windows
       run: |
         GOOS=windows GOARCH=amd64 go build -ldflags="-s -w" -o startctl.exe
